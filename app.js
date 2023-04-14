@@ -1,7 +1,7 @@
 const wrapper = document.querySelector(".sliderWrapper");
 const menuItems = document.querySelectorAll(".menuItem");
 
-const products = [
+/*const products = [
     {
       id: 1,
       title: "Air Force",
@@ -78,3 +78,14 @@ const products = [
       ],
     },
   ];
+
+*/
+
+  menuItems.forEach((item,index) => {
+    item.addEventListener("click" ,()=> {
+        // for changing current slide
+        wrapper.style.transform = `translateX(${-100 * index}vw)`;
+        
+
+    });
+  });

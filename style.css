@@ -105,13 +105,14 @@ nav {
   position: absolute;
   top: 50%;
   right: 10%;
-  font-size: 25px;
+  font-size: 19px;
   font-weight: 900;
   color: white;
   border: 1px solid grey;
   background-color: black;
   z-index: 1;
   cursor: pointer;
+  size: 30vh;
 }
 .buyButton:hover {
   background-color: lightyellow;
@@ -191,6 +192,7 @@ nav {
   top:10%;
   width:40%;
   padding:50px;
+  right:0;
 }
 .productTitle {
   font-size:75px;
@@ -199,5 +201,41 @@ nav {
 }
 .productDesc{
   font-size: 25px;
-  color:gray;
+  color:rgb(155, 119, 119);
+}
+.colors,
+.sizes {
+  display:flex;
+  margin-bottom: 20px;
+}
+.color{
+  width:32px;
+  height:32px;
+  border-radius:5px;
+  background-color: black;
+  margin-right: 10px;
+  cursor:pointer;
+}
+.color:last-child {
+  background-color: darkblue;;
+}
+.size{
+  border: 1px solid black;
+  margin-right: 10px;
+  cursor:pointer;
+  font-size: 20px;
+  padding: 5px 20px;
+}
+.productButton{
+  float:right;
+  padding: 10px 15px;
+  background-color: black;
+  font-weight: 600;
+  cursor:pointer;
+  color:white;
+}
+.productButton:hover {
+  background-color: white;
+  color:black;
+
 }

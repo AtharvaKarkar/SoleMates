@@ -1,7 +1,7 @@
 const wrapper = document.querySelector(".sliderWrapper");
 const menuItems = document.querySelectorAll(".menuItem");
 
-/*const products = [
+const products = [
     {
       id: 1,
       title: "Air Force",
@@ -9,26 +9,26 @@ const menuItems = document.querySelectorAll(".menuItem");
       colors: [
         {
           code: "black",
-          img: "./Image/air.png",
+          img: "./Images/air.png",
         },
         {
           code: "darkblue",
-          img: "./Image/air2.png",
+          img: "./Images/air2.png",
         },
       ],
     },
     {
       id: 2,
-      title: "Air Jordan",
+      title: " Air Jordan",
       price: 149,
       colors: [
         {
           code: "lightgray",
-          img: "./Image/jordan.png",
+          img: "./Images/jordan.png",
         },
         {
           code: "green",
-          img: "./Image/jorden2.png",
+          img: "./Images/jordan2.png",
         },
       ],
     },
@@ -39,11 +39,11 @@ const menuItems = document.querySelectorAll(".menuItem");
       colors: [
         {
           code: "lightgray",
-          img: "./Image/blazer.png",
+          img: "./Images/blazer.png",
         },
         {
           code: "green",
-          img: "./Image/blazer2.png",
+          img: "./Images/blazer2.png",
         },
       ],
     },
@@ -54,11 +54,11 @@ const menuItems = document.querySelectorAll(".menuItem");
       colors: [
         {
           code: "black",
-          img: "./Image/crater.png",
+          img: "./Images/crater.png",
         },
         {
           code: "lightgray",
-          img: "./Image/crater2.png",
+          img: "./Images/crater2.png",
         },
       ],
     },
@@ -69,22 +69,64 @@ const menuItems = document.querySelectorAll(".menuItem");
       colors: [
         {
           code: "gray",
-          img: "./Image/hippie.png",
+          img: "./Images/hippie.png",
         },
         {
           code: "black",
-          img: "./Image/hippie2.png",
+          img: "./Images/hippie2.png",
         },
       ],
     },
   ];
 
-*/
+  let choosenProduct = products[0];
+
+
+  const currentProductImg = document.querySelector(".productImg");
+  const currentProductTitle = document.querySelector(".productTitle");
+  const currentProductPrice = document.querySelector(".productPrice");
+  const currentProductColors = document.querySelectorAll(".color");
+  const currentProductSizes = document.querySelectorAll(".size");
+
+
 
   menuItems.forEach((item,index) => {
     item.addEventListener("click" ,()=> {
         // for changing current slide
         wrapper.style.transform = `translateX(${-100 * index}vw)`;
 
+        // change the choosen product
+        choosenProduct = products[index];
+
+        // change the text of currentProduct
+        currentProductTitle.textContent = choosenProduct.title;
+        currentProductPrice.textContent = "$" +choosenProduct.price;
+        currentProductImg.src = choosenProduct.colors[0].img;
+
+        //assing new colors
+      currentProductColors.forEach((color, index) => {
+        color.style.backgroundColor = choosenProduct.colors[index].code;
+    });
+
+        
     });
   });
+
+      currentProductColors.forEach((color,index) => {
+        color.addEventListener("click", () => {
+          currentProductImg.src = choosenProduct.colors[index].img;
+        });
+      });
+
+      currentProductSizes.forEach((size,index) => {
+        size.addEventListener("click", () => {
+          currentProductSizes.forEach((sizes) => {
+            // reset the existing sizes
+            size.style.backgroundColor = "white";
+            size.style.color ="black";
+          }); 
+          // new clicked sizes.
+          size.style.backgroundColor ="black";
+          size.style.color="white";
+        });
+      });

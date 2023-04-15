@@ -85,7 +85,6 @@ const menuItems = document.querySelectorAll(".menuItem");
     item.addEventListener("click" ,()=> {
         // for changing current slide
         wrapper.style.transform = `translateX(${-100 * index}vw)`;
-        
 
     });
   });

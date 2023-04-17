@@ -314,11 +314,20 @@ nav {
   justify-content: center;
   cursor: pointer;
   padding:2px;
-
-
 }
-
 .label{
   font-size: 16px;
   font-weight: 350;
+}
+
+.gallery{
+  padding:50px;
+  display: flex;;
+}
+.galleryItem{
+  flex:1;
+  padding:50px;
+}
+.galleryImg{
+  width:100%;
 }

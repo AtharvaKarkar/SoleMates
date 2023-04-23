@@ -333,7 +333,7 @@ nav {
 }
 
 .newSeason{
-  flex-direction:column;
+  display: flex;
 }
 .nsItem{
   flex:1;
@@ -350,7 +350,7 @@ nav {
   height:500px;
 }
 .nsTitle{
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .nsButton{

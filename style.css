@@ -24,6 +24,7 @@ nav {
   background-color: grey;
   padding: 10px 20px;
   border-radius: 10px;
+  
 }
 .searchInput {
   border: none;
@@ -41,6 +42,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
+ 
 }
 .menuItem {
   margin-right: 50px;
